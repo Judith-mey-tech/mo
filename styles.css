@@ -1,0 +1,185 @@
+/* Сброс отступов и единый box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Основной стиль страницы */
+body {
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: #eee;
+  line-height: 1.6;
+}
+
+/* Центрированный контейнер */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Кнопки */
+.btn {
+  padding: 12px 24px;
+  margin: 8px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn {
+  background: #6c5ce7;
+  color: white;
+}
+
+.btn:hover {
+  background: #5a4fcf;
+}
+
+/* Прозрачная кнопка */
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #666;
+  color: #aaa;
+}
+
+.btn.ghost:hover {
+  border-color: #6c5ce7;
+  color: #6c5ce7;
+  background: rgba(108, 92, 231, 0.1);
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #1e1e1e;
+  margin: 0 auto;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Крестик закрытия */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #eee;
+  font-size: 16px;
+  transition: border 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 2px rgba(108, 92, 231, 0.3);
+}
+
+/* Файл: стилизуем под кнопку */
+input[type="file"]::file-selector-button {
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #5a4fcf;
+}
+
+/* Строка с кнопками */
+.row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+/* Мелкий текст */
+.muted {
+  color: #888;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Сообщение в модалке */
+#auth-msg {
+  margin-top: 15px;
+  font-size: 14px;
+  min-height: 20px;
+}
+
+/* Результат загрузки */
+#upload-result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #1a1a1a;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* Скрытый раздел загрузки */
+#upload-section {
+  display: none;
+  margin-top: 30px;
+  padding: 20px;
+  background: #1a1a1a;
+  border-radius: 12px;
+}

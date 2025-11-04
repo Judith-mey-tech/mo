@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuthenTrack — Demo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container">
+      <h1 class="brand">AuthenTrack</h1>
+      <nav>
+        <button id="btn-login" class="btn small">Войти</button>
+        <button id="btn-register" class="btn small ghost">Регистрация</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <section class="card" id="upload-section" style="display: none;">
+      <h2>Загрузить файл</h2>
+      <p class="muted">Поддерживаемые форматы: video / audio / pdf. Максимум ~200MB (демо).</p>
+
+      <form id="upload-form">
+        <label class="field">
+          <span>Выбрать файл</span>
+          <input id="file-input" type="file" accept="video/*,audio/*,.pdf" required />
+        </label>
+
+        <label class="field">
+          <span>Прикрепить описание (опционально)</span>
+          <input id="desc-input" type="text" placeholder="Например: watermark, оригинал от 01.01.2025" />
+        </label>
+
+        <div class="row">
+          <button class="btn" type="submit">Загрузить</button>
+          <div id="upload-status" class="muted small">Ожидание загрузки</div>
+        </div>
+
+        <progress id="upload-progress" value="0" max="100" style="display:none;"></progress>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>История загрузок</h2>
+      <p class="muted">Список загруженных файлов. Нажмите, чтобы проверить.</p>
+      <ul id="files-list" class="list"></ul>
+    </section>
+
+    <section class="card wide">
+      <h2>Результат проверки</h2>
+      <div id="check-result" class="result">
+        <div class="muted">Загрузите файл и выберите его из списка.</div>
+      </div>
+
+      <div class="controls row">
+        <input id="check-id" type="number" placeholder="ID файла (например, 1)" min="1" />
+        <button id="btn-get-check" class="btn small">Посмотреть результат</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Модальное окно -->
+  <div id="auth-modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="modal-close" class="modal-close" aria-label="Close">x</button>
+      <h3 id="modal-title">Войти</h3>
+
+      <form id="auth-form">
+        <input id="username" type="text" placeholder="Имя пользователя" required />
+        <input id="password" type="password" placeholder="Пароль" required />
+        <div class="row">
+          <button id="auth-submit" class="btn" type="submit">Войти</button>
+          <button id="toggle-auth" type="button" class="btn ghost small">Переключить на регистрацию</button>
+        </div>
+        <div id="auth-msg" class="muted small"></div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer container">
+    <small>Demo AuthenTrack — учебный проект для презентации</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
